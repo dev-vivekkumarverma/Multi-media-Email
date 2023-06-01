@@ -13,7 +13,7 @@ def send_test_mail(student_name,receiver_email,file_name,body):
     sender_email = "#sender's mail"
     password="#password obtained after registring your app for two factor authentication in sender email's google setting"
     msg = MIMEMultipart()
-    msg['Subject'] = 'Certificate Of Participation'
+    msg['Subject'] = "#email subject"
     msg['From'] = sender_email
     msg['To'] = receiver_email
 
@@ -31,7 +31,7 @@ def send_test_mail(student_name,receiver_email,file_name,body):
     #     msg.attach(img)
         
     pdf = MIMEApplication(open(file_name, 'rb').read())
-    pdf.add_header('Content-Disposition', 'attachment', filename= str(student_name).strip()+"_cetificate.png")
+    pdf.add_header('Content-Disposition', 'attachment', filename= "#file_name")
     msg.attach(pdf)
 
     try:
